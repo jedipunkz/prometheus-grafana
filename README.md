@@ -8,12 +8,21 @@
 ## Boot up docker-compose
 
 ```shell
+$ docker-compose build
 $ docker-compose up -d
 ```
 
-## Access grafana via Browser
+## Access Grafana via Browser
 
 ```
 http://localhost:3000
 ```
 
+## Access Prometheus via Browser
+
+## Clean Up
+
+```shell
+$ docker-compose stop
+$ docker-compose rm
+```
