@@ -20,6 +20,10 @@ http://localhost:3000
 
 ## Access Prometheus via Browser
 
+```
+http://localhost:9090
+```
+
 ## Clean Up
 
 ```shell
