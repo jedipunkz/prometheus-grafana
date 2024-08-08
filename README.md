@@ -30,3 +30,19 @@ http://localhost:9090
 $ docker-compose stop
 $ docker-compose rm
 ```
+
+## Migration Data
+
+old host
+
+```shell
+sudo docker run --rm -v prometheus_data:/data -v $(pwd):/backup busybox tar czvf /backup/prometheus_data.tar.gz -C /data .
+scp prometheus_data.tar.gz <new_host>:<path>/
+```
+
+new host
+
+```shell
+sudo docker volume create prometheus-grafana_prometheus_data
+sudo docker run --rm -v prometheus-grafana_prometheus_data:/data -v /tmp:/backup busybox tar xzvf /backup/prometheus_data.tar.gz -C /data
+```
